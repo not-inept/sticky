@@ -1,0 +1,19 @@
+{
+  "name": "Sticky for goo.gl™",
+  "description": "Make goo.gl a little bit more useful by adding labels, tags, and a description field.",
+  "version": "0.1",
+  "permissions": [
+    "https://*.goo.gl/*",
+    "tabs"
+  ],
+  "content_scripts": [{
+    "matches": [
+      "https://*.goo.gl/*"
+    ],
+    "js": [
+      "./sticky.js"
+    ],
+    "run_at": "document_end"
+  }],
+  "manifest_version": 2
+}
