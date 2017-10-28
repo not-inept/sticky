@@ -19,15 +19,37 @@
     var id = short_url.split('/')[1];
 
     var label = document.createElement("td");
-    label.innerHTML = id;
+
+    var label_input = document.createElement("input");
+    label_input.type = "text";
+    label_input.placeholder = "Click to set...";
+    var result = localStorage.getItem("sticky_" + id + "_name");
+    if (result !== null) {
+      label_input.value = result;
+    }
+    label_input.onchange = function() {
+      localStorage.setItem("sticky_" + id + "_name", this.value);
+    }
     label.className += " mdl-data-table__cell--non-numeric";
+    label.appendChild(label_input);
     element.appendChild(label);
 
     var tags = document.createElement("td");
-    tags.innerHTML = "tags, tags";
+    var tags_input = document.createElement("input");
+    tags_input.type = "text";
+    tags_input.placeholder = "Separate with commas...";
+    var result = localStorage.getItem("sticky_" + id + "_tags");
+    if (result !== null) {
+      tags_input.value = result;
+    }
+    tags_input.onchange = function() {
+      localStorage.setItem("sticky_" + id + "_tags", this.value);
+    }
     tags.className += " mdl-data-table__cell--non-numeric";
+    tags.appendChild(tags_input)
     element.appendChild(tags);
   }
+
 
   console.log("Working on it :)");
   window.onload = function() {
