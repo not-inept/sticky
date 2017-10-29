@@ -10,7 +10,11 @@
     "matches": [
       "https://*.goo.gl/*"
     ],
+    "css": [
+      "./lib/taggle.css"
+    ],
     "js": [
+      "./lib/taggle.js",
       "./sticky.js"
     ],
     "run_at": "document_start"

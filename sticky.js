@@ -35,19 +35,31 @@
     element.appendChild(label);
 
     var tags = document.createElement("td");
-    var tags_input = document.createElement("input");
+    var tags_input = document.createElement("div");
     tags_input.type = "text";
     tags_input.placeholder = "Separate with commas...";
     var result = localStorage.getItem("sticky_" + id + "_tags");
+    var saved_tags = [];
     if (result !== null) {
-      tags_input.value = result;
+      saved_tags = result.split(',');
     }
-    tags_input.onchange = function() {
-      localStorage.setItem("sticky_" + id + "_tags", this.value);
-    }
+
     tags.className += " mdl-data-table__cell--non-numeric";
+    tags_input.id = "tags_for_" + id;
     tags.appendChild(tags_input)
     element.appendChild(tags);
+
+    var taggle_obj = new Taggle(tags_input.id, {
+      tags: saved_tags,
+      onTagAdd: function(event, tag) {
+        var tags = taggle_obj.getTags().values;
+        localStorage.setItem("sticky_" + id + "_tags", tags.join(','));
+      },
+      onTagRemove: function(event, tag) {
+        var tags = taggle_obj.getTags().values;
+        localStorage.setItem("sticky_" + id + "_tags", tags.join(','));
+      }
+    });
   }
 
 
