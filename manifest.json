@@ -1,7 +1,13 @@
 {
   "name": "Sticky for goo.gl™",
-  "description": "Make goo.gl a little bit more useful by adding labels, tags, and a description field.",
+  "short_name": "Sticky",
+  "description": "Make goo.gl a little bit more useful by adding labels and tags.",
   "version": "0.1",
+  "icons": {
+    "16": "16.png",
+    "48": "48.png",
+    "128": "128.png"
+  },
   "permissions": [
     "https://*.goo.gl/*",
     "tabs"

@@ -3,13 +3,12 @@
 An extension to make Goo.gl a little more useful.
 
 # Status
-Brand new!
+Kind of working now, at least as far as labeling goes.
 
 # Roadmap
-- [ ] Add short label to link.
-- [ ] Add tags to link.
-- [ ] Add description to link.
+- [X] Add short label to link.
+- [X] Add tags to link.
 - [ ] Add search bar for finding links by tags/labels/url.
-- [ ] Add tag view for viewing information on a group of commonly tagged links.
+- [ ] Add tag filter.
 - [ ] Cloud syncing for links (Google Drive, likely).
 - [ ] Ability to share/collaborate on links/tags.
